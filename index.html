@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+    
+    <script src="app.js" defer></script>
+    <title>Mini Shooter</title>
+</head>
+<body>
+    
+    <div class="gameFrame" id="gameFrame">
+        <div class="healthBar" id="healthBar"></div>
+        <div class="scoreContainer">
+            <div>Kills: <span id="score">0</span></div>
+            <div>Highest-Kills: <span id="highestScore"></span></div>
+            <button id="pauseGameBtn"><span class="material-symbols-outlined">pause_circle</span></button>
+        </div>
+    </div>
+
+    <div class="gameOver" id="gameOver">
+        <h1 id="bigScore">0</h1>
+        <p>Kills</p>
+        <button id="startGameBtnEl">Restart Game</button>
+    </div>
+
+</body>
+</html>
