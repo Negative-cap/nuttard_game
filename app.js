@@ -242,7 +242,7 @@ function revealEnemies() {
         enemy.src = alivePic;
         enemy.style.pointerEvents = "auto"; 
 
-        let shootDelay = window.innerWidth > 900 ? 800 : 600; 
+        let shootDelay = 800; 
         let disappearDelay = 1000; 
 
         let shootTimeout = setTimeout(() => {
