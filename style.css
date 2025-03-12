@@ -1,0 +1,151 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-family: calibri;
+    font-weight: normal;
+}
+
+img {
+   display: block;
+   max-width: 100%;
+}
+
+button {
+   cursor: pointer;
+}
+
+.gameFrame {
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    background-image: url('./ai-generated-7845461.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    position: absolute;
+    overflow: hidden;
+}
+
+.gameFrame::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    opacity: 0; 
+    pointer-events: none; 
+    transition: opacity 0.2s ease-in-out;
+}
+
+.hit-effect::before {
+    opacity: 0.5; 
+}
+
+.enemy {
+    /* height:fit-content;
+    width: 10%;
+    position: relative;
+    bottom: -100%;
+    transition: 0.4s; */
+
+    width: 10%; /* Adjust based on number of enemies */
+    position: absolute;
+    bottom: -100%; /* Keep them at the bottom */
+    transition: bottom 0.4s;
+}
+
+@media (max-width: 900px) {
+    .enemy {
+        width: 20%;
+    }
+}
+
+.show {
+    bottom: 0%;
+    transition: 0.4s;
+}
+
+.dead {
+    bottom: 0%;
+}
+
+.startGameBtnEl {
+    position: absolute;
+    padding: 1em 2.5em;
+    border-radius: 3em;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%, -90%);
+    width: fit-content;
+}
+
+.healthBar {
+    width: 100%;
+    height: 1em;
+    background-color: red;
+    position: absolute;
+    transition: width 0.4s;
+}
+
+.scoreContainer {
+    position: absolute;
+    color: white;
+    top: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items:start;
+    gap: 1em;
+}
+
+.gameOver {
+    position: absolute;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 400px;
+    border-radius: 1em;
+    padding: 2em;
+}
+
+.gameOver h1 {
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.gameOver p {
+    margin: 1em auto;
+}
+
+.gameOver button {
+    border-radius: 1em;
+    color: white;
+    background-color: rgb(69, 137, 255);
+    padding: 1em;
+}
+
+.shrink {
+    transform: scale(0);
+}
+
+#pauseGameBtn {
+    width: fit-content;
+    background-color: transparent;
+}
+
+#pauseGameBtn {
+    color: white;
+}
