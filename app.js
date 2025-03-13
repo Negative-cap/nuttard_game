@@ -234,13 +234,17 @@ function revealEnemies() {
     if (healthPoints > 0 && !isPaused) {
         let aliveEnemies = Array.from(enemies).filter(enemy => !enemy.classList.contains("dead") && !enemy.classList.contains("show"));
 
-        if (aliveEnemies.length === 0) return
+        if (aliveEnemies.length === 0) return;
 
         let enemy = aliveEnemies[Math.floor(Math.random() * aliveEnemies.length)];
         enemy.classList.add("show");
 
+        // Randomly set different heights when enemies pop up
+        let randomHeight = Math.random() < 0.5 ? "0%" : "20%"; // 50% chance for base or higher position
+        enemy.style.bottom = randomHeight;
+
         enemy.src = alivePic;
-        enemy.style.pointerEvents = "auto"; 
+        enemy.style.pointerEvents = "auto";
 
         let shootDelay = 800; 
         let disappearDelay = 1000; 
@@ -254,9 +258,10 @@ function revealEnemies() {
 
         let removeTimeout = setTimeout(() => {
             enemy.classList.remove("show");
+            enemy.style.bottom = "-20%"; // Hide below base level again
 
             if (!isPaused && gameActive) {
-                revealEnemies(); 
+                revealEnemies();
             }
         }, disappearDelay);
         activeTimeouts.push(removeTimeout);
