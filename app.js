@@ -258,7 +258,7 @@ function revealEnemies() {
 
         let removeTimeout = setTimeout(() => {
             enemy.classList.remove("show");
-            enemy.style.bottom = "-20%"; // Hide below base level again
+            enemy.style.bottom = "-50%"; // Hide below base level again
 
             if (!isPaused && gameActive) {
                 revealEnemies();
